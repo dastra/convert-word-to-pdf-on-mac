@@ -16,7 +16,7 @@ on run {input, parameters}
 	repeat with aFile in input
 		repeat 1 times -- # fake loop
 
-            -- Create the output filename
+			-- Create the output filename
 			tell application "System Events"
 				set inputFile to disk item (aFile as text)
 				
@@ -27,12 +27,12 @@ on run {input, parameters}
 					-- .doc
 					set outputFileName to ((text 1 thru -5 of Nm) & ".pdf")
 				else
-                    -- If this isn't a word document, continue to the next file.
+					-- If this isn't a word document, continue to the next file.
 					exit repeat
 				end if
 			end tell
 			
-            -- Open word, save as PDF in default path
+			-- Open word, save as PDF in default path
 			tell application id "com.microsoft.Word"
 				activate
 				open aFile
@@ -43,7 +43,7 @@ on run {input, parameters}
 				set defaultPath to get default file path file path type documents path
 			end tell
 			
-            -- Move to output location
+			-- Move to output location
 			tell application "System Events"
 				set outputPath to (container of inputFile)
 				set outputFile to disk item outputFileName of folder defaultPath
