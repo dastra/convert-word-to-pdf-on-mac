@@ -1,4 +1,4 @@
-# Automating convertion of files from word to PDF on macOS
+# Automating conversion of files from word to PDF on macOS
 
 This uses:
 * AppleScript to open microsoft word and save as a PDF 
